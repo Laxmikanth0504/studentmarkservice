@@ -36,9 +36,9 @@ pipeline {
                 script {
                     withEnv(["KUBECONFIG=C:\\ProgramData\\Jenkins\\.jenkins\\.kube\\config"]) {
                         // Replace variables in YAML and create concrete files:
-                        bat "\"C:\\Program Files\\Git\\usr\\bin\\envsubst.exe\" < k8s/namespace-template.yaml > k8s/namespace.yaml"
-                        bat "\"C:\\Program Files\\Git\\usr\\bin\\envsubst.exe\" < k8s/deployment-template.yaml > k8s/deployment.yaml"
-                        bat "\"C:\\Program Files\\Git\\usr\\bin\\envsubst.exe\" < k8s/service-template.yaml > k8s/service.yaml"
+                        bat "\"C:\\Program Files\\Git\\mingw64\\bin\\envsubst.exe\" < k8s/namespace-template.yaml > k8s/namespace.yaml"
+                        bat "\"C:\\Program Files\\Git\\mingw64\\bin\\envsubst.exe\" < k8s/deployment-template.yaml > k8s/deployment.yaml"
+                        bat "\"C:\\Program Files\\Git\\mingw64\\bin\\envsubst.exe\" < k8s/service-template.yaml > k8s/service.yaml"
 
                         // Apply manifests
                         bat "kubectl apply -f k8s/namespace.yaml --validate=false"
